@@ -88,7 +88,7 @@ ifconfig eth0 1.0.0.3 up
 	\item %b
 	To ping PC2, PC1 needs to know PC2's MAC address. Because PC1's ARP table is empty it broadcasts an ARP query to the IP of PC2. PC2 receives the broadcast with PC1's IP and MAC and adds it to the ARP table. Next PC2 responds to the ARP query. PC1 receives PC2's response and adds an entry for PC2 to the ARP table.
 
-	PC3 isn't involved in the transaction and does not get any updates. It receives the ARP broadcast from PC1 but does not respond to it because it does not match the IP of PC3.
+	PC3 isn't involved in the transaction and does not get any updates. It receives the ARP broadcast from PC1 but does not respond to it because it does not match the IP of PC2.
 
 	\item %c
 	I spoofed PC2's MAC address from PC3:
