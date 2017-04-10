@@ -1,6 +1,12 @@
 \documentclass[12pt, a4paper]{article}
 
 \usepackage{enumerate}
+\usepackage{listings}
+\usepackage{graphicx}
+
+\lstset{
+	breaklines=true
+}
 
 \setlength\parskip{1em}
 \setlength\parindent{0em}
@@ -54,6 +60,31 @@
 \section{} %5
 \begin{enumerate}[a]
 	\item %a
+	I started the 3 hosts with these commands:
+	\begin{lstlisting}
+# terminal
+vstart PC1 --eth0=A
+vstart PC2 --eth0=B
+vstart PC3 --eth0=C
+
+# for host A
+ifconfig eth0 1.0.0.1 up
+# for host B
+ifconfig eth0 1.0.0.2 up
+# for host C
+ifconfig eth0 1.0.0.3 up
+	\end{lstlisting}
+
+	Then I ran arp on each machine. All ARP tables were empty:
+
+	\includegraphics[width=\linewidth]{screenshots/screen1}
+
+	Then I pinged PC2 from PC1 and ran arp again:
+
+	\includegraphics[width=\linewidth]{screenshots/screen2}
+
+	PC1 now knows about the MAC address of PC2 and vice versa. PC3 still has an empty ARP table.
+
 	\item %b
 	\item %c
 \end{enumerate}
