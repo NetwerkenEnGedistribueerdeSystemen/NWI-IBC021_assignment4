@@ -103,7 +103,7 @@ arpspoof -i eth0 1.0.0.2
 	PC3 know has a correct ARP entry for PC2 because it looked up PC2's MAC address to spoof it.
 
 	\paragraph{What happened?}
-	PC3 started an ARP lookup for the IP 1.0.0.2 which belogs to PC2. It received the MAC address of PC2 and began sending out ARP responses with the MAC of PC2. PC2 and PC1 received those responses and added the spoofed entry to their ARP tables.
+	PC3 started an ARP lookup for the IP 1.0.0.2 which belongs to PC2. It received the MAC address of PC2 and began sending out ARP responses with the MAC of PC2. PC2 and PC1 received those responses and added the spoofed entry to their ARP tables.
 \end{enumerate}
 
 \end{document}
