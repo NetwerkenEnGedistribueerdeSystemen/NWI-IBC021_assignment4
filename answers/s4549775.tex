@@ -87,6 +87,20 @@ ifconfig eth0 1.0.0.3 up
 
 	\item %b
 	\item %c
+	I spoofed PC2's MAC address from PC3:
+	\begin{lstlisting}
+arpspoof -i eth0 1.0.0.2
+	\end{lstlisting}
+
+	Next I pinged PC2 from PC2 and looked at the ARP tables again:
+
+	\includegraphics[width=\linewidth]{screenshots/screen3}
+
+	PC1 now has two entries (for PC2 and PC3) with the MAC address of PC2. The first entry is correct, the second one was spoofed by PC3.
+
+	PC2 still has the entry for PC1 but now has an additional entry for PC3 but with the MAC of itself (PC2), that was spoofed by PC3.
+
+	PC3 know has a correct ARP entry for PC2 because it looked up PC2's MAC address to spoof it.
 \end{enumerate}
 
 \end{document}
