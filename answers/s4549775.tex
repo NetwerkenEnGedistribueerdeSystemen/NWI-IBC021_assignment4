@@ -74,6 +74,15 @@
 	\end{enumerate}
 
 	\item %3
+	In addition to the MAC addresses the routers now need IPs. I assume router X has IP 192.168.3.3 and router Y has IP 192.168.1.3.
+
+	\begin{enumerate}
+		\item E sends an ARP query to (192.168.3.3, FF-FF-FF-FF-FF-FF)
+		\item The router responds with it's MAC address $X_2$ to (192.168.3.1, E)
+		\item E receives the ARP response and knows the MAC address of the router. It sends the datagram to (192.168.1.2, $X_2$)
+		\item $X_2$ forwards the datagram to (192.168.1.2, $Y_2$)
+		\item $Y_2$ forwards the datagram to (192.168.1.2, B)
+	\end{enumerate}
 \end{enumerate}
 
 \section{} %3
