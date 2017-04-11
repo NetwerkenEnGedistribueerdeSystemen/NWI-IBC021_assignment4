@@ -47,6 +47,7 @@
 	Each transaction (set of messages that belong together) has an ID to keep track of the transaction should there be more than one.
 
 	\item %f
+	The release message is sent by the client to cancel the lease on its IP. The message is not acknowledged or retransmitted. If the DHCP server does not get this message then the lease will just run out after the lease time is exceeded. It is therefore not important to insure delivery of the release message.
 \end{enumerate}
 
 \section{} %2
