@@ -108,9 +108,45 @@ The switch table is empty initially.
 
 \begin{enumerate}[i]
 	\item %i
+	B sends a frame to E. The switch adds B to its switch table and floods the message to every port except port 2.
+
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{IP} & \textbf{MAC} & \textbf{Port}\\\hline
+		1.0.0.2 & B & 2\\\hline
+	\end{tabular}
+
 	\item %ii
-	\item %iii
+	Because the message from B was flooded. E received it and replies to B. The switch adds E to the switch table and sends the response to port 2 because B it in the switch table.
+
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{IP} & \textbf{MAC} & \textbf{Port}\\\hline
+		1.0.0.2 & B & 2\\\hline
+		1.0.0.5 & E & 5\\\hline
+	\end{tabular}
+
+	\item % iii
+	A sends a frame to B. The switch adds A to its switch table. B is in the routing table so it forwards the message to port 2.
+
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{IP} & \textbf{MAC} & \textbf{Port}\\\hline
+		1.0.0.2 & B & 2\\\hline
+		1.0.0.5 & E & 5\\\hline
+		1.0.0.1 & A & 1\\\hline
+	\end{tabular}
+
 	\item %iv
+	B receives the frame from A and sends a response back. The switch already knows about B so nothing changes in the switch table and it knows A so it forwards the frame to port 1.
+
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{IP} & \textbf{MAC} & \textbf{Port}\\\hline
+		1.0.0.2 & B & 2\\\hline
+		1.0.0.5 & E & 5\\\hline
+		1.0.0.1 & A & 1\\\hline
+	\end{tabular}
 \end{enumerate}
 
 \section{} %4
