@@ -150,6 +150,22 @@ The switch table is empty initially.
 \end{enumerate}
 
 \section{} %4
+Constantin Blach heroically copied the table from the exercise sheet into \LaTeX\ and I used this here. I filled it in myself however.
+
+\begin{tabular}{c|c|c|c|c|c|c}
+    ID & Source & Destination & Protocol & Content & Scenario 1 (a) & Scenario 2 (d) \\ \hline
+    1 & C & broadcast & DHCP & DHCP & 1 & 1 \\ \hline
+    2 & R & broadcast & ARP & who is $NS_A$ & - & - \\ \hline
+    3 & A & C & HTTP & index.html & 6 & -\\ \hline
+    4 & C & broadcast & ARP & who is R & 2 & 2 \\ \hline
+    5 & R & $NS_A$ & DNS & query for A.com & 4 & - \\ \hline
+    6 & C & A & TCP & SYN+ACK & 7 & 6 \\ \hline
+    7 & C & A & HTTP & GET index.html & 5 & 4 \\ \hline
+    8 & A & C & HTTP & Not Modified & - & 5 \\ \hline
+    9 & C & R & DNS & query for A.com & 3 & 3 \\ \hline
+    10 & R & broadcast & DHCP & DHCP offer & - & - \\ \hline
+\end{tabular}
+
 \begin{enumerate}
 	\item %1
 	Answer in the table.
